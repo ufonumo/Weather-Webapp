@@ -38,7 +38,7 @@
   }
   
   img {
-    display: block;
+    /* display: block; */
     max-width: 100%;
     height: auto;
   }
@@ -178,6 +178,7 @@
     border-radius: 20px;
     background: var(--text_light);
     color: var(--text_med);
+    text-align: center;
   }
   
   .weather-section .city::after {
