@@ -73,16 +73,37 @@ form.addEventListener("submit", e => {
       }">
           <figcaption>${weather[0]["description"]}</figcaption>
         </figure>
+        <p class="notice"> ${noticePopup()}</p>
       `;
 
+      list.prepend(li);
       li.innerHTML = markup;
-      list.appendChild(li);
+
+      function noticePopup(){
+        if(Math.round(main.temp) < 30){
+           return document.getElementsByClassName('notice').innerText = "Remember to carry an Umbrella today";
+        }else{
+         return document.getElementsByClassName('notice').innerText ='It\'s gonna be a sunny day';
+        }
+      };
+      
     })
     .catch(() => {
-      msg.textContent = "Please search for a valid city 😩";
+      msg.textContent = "Please search for a city 😩";
     });
 
   msg.textContent = "";
   form.reset();
   input.focus();
 });
+
+
+
+
+
+
+
+
+
+
+
